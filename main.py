@@ -10,7 +10,7 @@ def main() -> None:
 
     for data, values in players_data.items():
         guild = None
-        if values["guild"] is not None:
+        if values.get("guild"):
             guild, _ = Guild.objects.get_or_create(
                 name=values["guild"]["name"],
                 description=values["guild"]["description"],
